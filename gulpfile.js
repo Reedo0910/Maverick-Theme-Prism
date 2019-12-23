@@ -62,7 +62,7 @@ gulp.task('clean:dist', function() {
 });
 
 gulp.task('move:dist', function() {
-    return gulp.src(['./templates', './assets'])
+    return gulp.src(['./templates/**/*', './assets/**/*', '__init__.py'], { base: '.' })
         .pipe(gulp.dest('dist'));
 });
 

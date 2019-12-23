@@ -1,5 +1,5 @@
 # Prism
 
-Default theme for [Maverick](https://github.com/AlanDecode/Maverick).
+A theme for [Maverick](https://github.com/AlanDecode/Maverick).
 
-© [AlanDecode](https://github.com/AlanDecode)
+© [Zeee](https://github.com/Reedo0910)

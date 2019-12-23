@@ -5,3 +5,4 @@ node_modules/
 temp
 .vscode
 __pycache__
+dist/

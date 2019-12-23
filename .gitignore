@@ -1,0 +1,7 @@
+package-lock.json
+templates
+.DS_Store
+node_modules
+temp
+.vscode
+__pycache__

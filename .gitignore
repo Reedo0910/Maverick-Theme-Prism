@@ -6,3 +6,12 @@ temp
 .vscode
 __pycache__
 dist/
+
+test_dist
+cached_imgs
+tmp
+assets/
+
+*.sh
+*.txt
+assets/

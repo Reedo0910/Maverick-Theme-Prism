@@ -30,28 +30,10 @@
             <div id="bg" style="background-image: url({{ fp(config.background_img) }})"></div>
         {% endif %}
         <div class="container">
-            <header id="ga-header">
-                <div first>
-                    <aside id="ga-logo">
-                        <a href="{{ fp(config.site_prefix) }}" target="_self">
-                            <img src="{{ fp(config.site_logo) }}" alt="{{ fp(config.site_name) }}">
-                        </a>
-                    </aside>
-                    <aside id="ga-brand">
-                        <h1 class="brand"><a class="no-style" href="{{ fp(config.site_prefix) }}">{{ fp(config.site_name) }}</a></h1>
-                        <p>{{ fp(config.description) }}</p>
-                    </aside>
-                </div>
-                <div second id="ga-nav">
-                    <nav class="navs">
-                        {{ build_navs(config.nav) }}
-                    </nav>
-                    <nav class="social-links">
-                        {{ build_links(config.social_links) }}
-                    </nav>
-                </div>
+            <header class="prism__header">
+                <h1><a href="">{{ fp(config.site_name) }}</a></h1>
             </header>
-            <div class="wrapper">
+            <div class="prism__wrapper">
                 {% block main %}{% endblock %}
                 <footer class="ga-mono" id="ga-footer">
                     <section>

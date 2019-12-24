@@ -10,4 +10,25 @@
     .prism-post-item-time {
         text-align: center;
     }
+
+    h2.prism-post-item-title a {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    .prism-post-item-time {
+        margin-bottom: 10px;
+
+        time {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 13px;
+            color: #a8a8a8;
+        }
+    }
+
 }

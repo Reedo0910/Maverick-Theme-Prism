@@ -9,19 +9,20 @@ Global elements
 
     h1 {
         font-size: 5em;
+        margin-top: 10px;
     }
 
-    // .brand-logo {
-    //     width: 100%;
-    //     max-width: 650px;
-    //     text-align: center;
-    //     margin: 0 auto 10px;
+    .brand-logo {
+        width: 100%;
+        max-width: 80px;
+        text-align: center;
+        margin: 0 auto 10px;
 
-    //     img {
-    //         width: 100%;
-    //         height: auto;
-    //     }
-    // }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 
     .prism-nav {
         margin-top: 50px;

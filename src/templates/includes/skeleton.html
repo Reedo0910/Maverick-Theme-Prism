@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="{{ config.language }}">
-    <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -19,52 +20,54 @@
             root: "",
             api: "{{ Router.gen_static_file_prefix() + search_cache_hash }}.json"
         }
+
     </script>
     {% block head %}{% endblock %}
 
     {{ fp(config.head_addon) }}
-    </head>
-    
-    <body>
-        {% if config.background_img != "" %}
-            <div id="bg" style="background-image: url({{ fp(config.background_img) }})"></div>
-        {% endif %}
-        <div class="container">
-            <header class="prism__header">
-                <h1><a href="">{{ fp(config.site_name) }}</a></h1>
-            </header>
-            <div class="prism__wrapper">
-                {% block main %}{% endblock %}
-                <footer class="ga-mono" id="ga-footer">
-                    <section>
-                        <span id="ga-uptime"></span>
-                        <span class="brand">{{ fp(config.site_name) }}</span>
-                    </section>
-                    <section>
-                        <p class="copyright">
-                            <span>Copyright © {{ moment.now().format('%Y') }} {{ fp(config.author) }}</span>
-                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Prism</a></span>
-                        </p>
-                        <div class="copyright">
-                            <span class="footer-addon">
-                                {{ fp(config.footer_addon) }}
-                            </span>
-                            <nav class="social-links">
-                                {{ build_links(config.social_links) }}
-                            </nav>
-                        </div>
-                    </section>
-                    <script>
-                        var site_build_date = "{{ fp(config.site_build_date) }}"
-                    </script>
-                    <script src="{{ Router.gen_static_file_prefix() }}assets/prism.js"></script>
-                </footer>
+</head>
+
+<body>
+    <div class="container">
+        <header class="prism-header" id="prism__header">
+            <div class="brand-logo"><img src="{{ fp(config.background_img) }}"" alt=" {{ fp(config.site_name) }} cover">
             </div>
+            <h1><a class="no-link" href="{{ fp(config.site_prefix) }}">{{ fp(config.site_name) }}</a></h1>
+            <nav class="prism-nav">{{ build_navs(config.nav) }}</nav>
+        </header>
+        <div class="prism-wrapper" id="prism__wrapper">
+            {% block main %}{% endblock %}
+            <footer id="prism__footer">
+                <section>
+                    <div>
+                        <span class="footer-addon">
+                            {{ fp(config.footer_addon) }}
+                        </span>
+                        <nav class="social-links">
+                            {{ build_links(config.social_links) }}
+                        </nav>
+                    </div>
+                    <p class="copyright">
+                        <span class="brand">{{ fp(config.site_name) }}</span>
+                        <span>Copyright © {{ moment.now().format('%Y') }} {{ fp(config.author) }}</span>
+                        <div></div>
+                    </p>
+                    <div class="copyright">
+                        <span>Powered by <a href="https://github.com/AlanDecode/Maverick" class="no-link" target="_blank">Maverick</a>&<a href="https://github.com/Reedo0910/Maverick-Theme-Prism" target="_blank" class="no-link">Prism</a></span>
+                    </div>
+                </section>
+                <script>
+                    var site_build_date = "{{ fp(config.site_build_date) }}"
+
+                </script>
+                <script src="{{ Router.gen_static_file_prefix() }}assets/prism.js"></script>
+            </footer>
         </div>
     </div>
-        
-        
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    </div>
+
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
         <div class="pswp__scroll-wrap">
             <div class="pswp__container">
@@ -81,14 +84,14 @@
                     <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
                     <div class="pswp__preloader">
                         <div class="pswp__preloader__icn">
-                          <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                          </div>
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
+                    <div class="pswp__share-tooltip"></div>
                 </div>
                 <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
                 </button>
@@ -105,5 +108,6 @@
     <script src="{{ Router.gen_static_file_prefix() }}assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     {{ fp(config.body_addon) }}
-    </body>
+</body>
+
 </html>

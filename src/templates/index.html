@@ -8,44 +8,42 @@
 
 {% block more_section %}
 
-<section id="ga-post_list" class="ga-section" data-title="Posts">
-    <ul>
-        {% for content in content_list %}
-        <li>
-            <article class="yue">
-                <h1>{{ content.meta['title'] }}</h1>
-                {% if content.meta['showfull'] %}
-                    {{ content.parsed }}
-                {% else %}
-                    <blockquote>{{ content.excerpt }}</blockquote>
-                {% endif %}
-                <footer>
-                    <span class="ga-read_more"><a class="ga-highlight" href="{{ Router.gen_permalink_by_content(content) }}">{{ tr('Read More') }}</a></span>
-                    <time class="ga-mono">
-                        {{ content.meta['date'].format("YYYY-MM-DD") }}
-                    </time>
-                </footer>
-            </article>
-        </li>
-        {% endfor %}
-    </ul>
+<section id="prism__post-list" class="prism-section row" data-title="Posts">
+    {% for content in content_list %}
+    <article class="yue prism-post-item col-md-8 offset-md-2">
+        <h2 class="prism-post-item-title"><a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="__self">{{ content.meta['title'] }}</a></h2>
+        <div class="prism-post-item-time">
+            <a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="__self">
+                <time class="text-uppercase">
+                    {{ content.meta['date'].format("MMMM DD YYYY") }}
+                </time>
+            </a>
+        </div>
+        <!-- {% if content.meta['showfull'] %} -->
+        {{ content.parsed }}
+        <!-- {% else %}
+        <p>{{ content.excerpt }}</p>
+        {% endif %} -->
+    </article>
+    {% endfor %}
 </section>
 
-<section class="ga-section ga-mono" id="ga-pager">
+<section class="prism-section" id="prism__paginate">
     {% if current_page > 1 %}
-        <a prev class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page-1) }}">Prev</a>
+    <a prev class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page-1) }}">Prev</a>
     {% endif %}
-    <span>Page {{ current_page }} of {{ max_pages }}</span>
+    <!-- <span>Page {{ current_page }} of {{ max_pages }}</span> -->
     {% if current_page < max_pages %}
-        <a next class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page+1) }}">Next</a>
+    <a next class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page+1) }}">Next</a>
     {% endif %}
 </section>
 
-<section id="ga-external_links" class="ga-section" data-title="Links">
+<section id="prism__external_links" class="prism-section">
+    <h2>Links</h2>
     <ul>
         {% for item in config.external_links %}
         <li>
-            <a class="ga-highlight" target="_blank" href="{{ fp(item['url']) }}">{{ fp(item['name']) }}</a>：{{ fp(item['brief']) }}
+            <a class="no-link" target="_blank" href="{{ fp(item['url']) }}">{{ fp(item['name']) }}</a>：{{ fp(item['brief']) }}
         </li>
         {% endfor %}
     </ul>

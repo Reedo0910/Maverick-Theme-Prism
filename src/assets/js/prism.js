@@ -1,6 +1,6 @@
 
-
-console.log(" %c Maverick By AlanDecode & Prism By Zeee %c https://www.imalan.cn/ ", "color: #fadfa3; background: #23b7e5; padding:5px;", "padding:5px;");
+console.log(' %c Maverick By AlanDecode %c https://www.imalan.cn/ ', 'color: #fadfa3; background: #23b7e5; padding:5px;', 'padding:5px;');
+console.log(' %c Prism By Zeee %c https://reedo0910.github.io/Prism-Blog/ ', 'color: #fff; background: #444; padding:5px;', 'padding:5px;');
 
 document.addEventListener('DOMContentLoaded', function(){
     (function () {
@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         }
     
-        window.setInterval(function () {
-            var times = new Date().getTime() - Date.parse(site_build_date);
-            times = Math.floor(times / 1000); // convert total milliseconds into total seconds
-            var days = Math.floor(times / (60 * 60 * 24)); //separate days
-            times %= 60 * 60 * 24; //subtract entire days
-            var hours = Math.floor(times / (60 * 60)); //separate hours
-            times %= 60 * 60; //subtract entire hours
-            var minutes = Math.floor(times / 60); //separate minutes
-            times %= 60; //subtract entire minutes
-            var seconds = Math.floor(times / 1); // remainder is seconds
-            document.getElementById('ga-uptime').innerHTML = days + ' D ' + hours + ' H ' + minutes + ' M ' + seconds + ' S '
-        }, 1000);
+        // window.setInterval(function () {
+        //     var times = new Date().getTime() - Date.parse(site_build_date);
+        //     times = Math.floor(times / 1000); // convert total milliseconds into total seconds
+        //     var days = Math.floor(times / (60 * 60 * 24)); //separate days
+        //     times %= 60 * 60 * 24; //subtract entire days
+        //     var hours = Math.floor(times / (60 * 60)); //separate hours
+        //     times %= 60 * 60; //subtract entire hours
+        //     var minutes = Math.floor(times / 60); //separate minutes
+        //     times %= 60; //subtract entire minutes
+        //     var seconds = Math.floor(times / 1); // remainder is seconds
+        //     document.getElementById('ga-uptime').innerHTML = days + ' D ' + hours + ' H ' + minutes + ' M ' + seconds + ' S '
+        // }, 1000);
     })();
 
     (function (selector) {
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     if (window.innerWidth >= 540)
                         height += 120;
     
-                    iframe.style.height = height + "px";
+                    iframe.style.height = height + 'px';
                 }
             }
         };

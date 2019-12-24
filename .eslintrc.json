@@ -8,20 +8,26 @@
     },
     "rules": {
         "indent": [
-            "error",
+            0,
             4
         ],
         "linebreak-style": [
-            "error",
+            0,
             "windows"
         ],
+        "semi": [0],
+        "space-before-function-paren": [0, "always"],
+        "no-use-before-define": 0,
+        "no-undef": 0,
+        "no-unused-vars": 0,
         "quotes": [
-            "error",
+            1,
             "single"
         ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "quote-props": 0,
+        "prefer-const": 0,
+        "no-console": 0,
+        "no-unused-expressions": 0,
+        "no-useless-escape": 0
     }
 }

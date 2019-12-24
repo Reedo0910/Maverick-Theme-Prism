@@ -19,17 +19,17 @@ static_files = {
 
 def build_links(links):
     fp = filterPlaceholders
-    str = '<span class="separator">·</span>'.join(['<li><a class="no-style" title="%s" href="%s" target="_blank"><i class="%s"></i>%s</a></li>'
-                      % (fp(item['name']), fp(item['url']), fp(item['icon']), fp(item['name'])) for item in links])
+    str = ''.join(['<li><a class="no-link" title="%s" href="%s" target="_blank"><i class="%s"></i></a></li>'
+                      % (fp(item['name']), fp(item['url']), fp(item['icon'])) for item in links])
     return '<ul>%s</ul>' % str
 
 
 def build_navs(navs):
     fp = filterPlaceholders
-    list = ['<li><a class="ga-highlight" href="%s" target="%s">%s</a></li>'
+    list = ['<li><a class="no-link text-uppercase" href="%s" target="%s">%s</a></li>'
             % (fp(item['url']), fp(item['target']), fp(item['name'])) for item in navs]
-    list.append('<li><a href="#" target="_self" class="search-form-input ga-highlight">%s</a></li>' % tr('Search'))
-    return '<ul>%s</ul>' % ('<span class="separator">·</span>'.join(list))
+    list.append('<li><a href="#" target="_self" class="search-form-input no-link">%s</a></li>' % tr('Search'))
+    return '<ul>%s</ul>' % (''.join(list))
 
 
 def filterPlaceholders(content):

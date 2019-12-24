@@ -56,9 +56,9 @@
     margin-bottom: 1.24em;
   }
   .yue .notice {
-    padding: 0.5rem;
-    padding-left: 0.75rem;
-    border-left: solid 4px #fbbc05;
+    padding: 0.5rem 0.75rem;
+    // padding-left: 0.75rem;
+    // border-left: solid 4px #fbbc05;
     background: rgba(0, 0, 25, 0.025);
     margin-bottom: 1.24em;
   }
@@ -152,7 +152,7 @@
     width: 14%;
     margin: 40px auto 34px;
     border: 0 none;
-    border-top: 3px solid #dededc;
+    border-top: 3px solid #000;
   }
   .yue blockquote {
     margin: 0 0 1.64em 0;

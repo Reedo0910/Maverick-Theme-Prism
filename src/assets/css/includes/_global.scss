@@ -9,7 +9,7 @@ Global elements
 
     .brand-logo {
         width: 100%;
-        max-width: 420px;
+        max-width: 650px;
         text-align: center;
         margin: 0 auto 10px;
 
@@ -20,13 +20,18 @@ Global elements
     }
 
     .prism-nav {
+        margin-top: 50px;
 
         ul {
             padding: 0;
             list-style: none;
             font-weight: 800;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
+
+            li {
+                margin: 0 30px;
+            }
 
         }
     }
@@ -81,6 +86,7 @@ Global elements
         padding: 0;
         list-style: none;
         text-align: center;
+
         li {
             padding: 20px 0;
         }

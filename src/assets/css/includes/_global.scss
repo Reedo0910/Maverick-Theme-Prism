@@ -7,17 +7,21 @@ Global elements
     padding: 50px 20px 20px;
     text-align: center;
 
-    .brand-logo {
-        width: 100%;
-        max-width: 650px;
-        text-align: center;
-        margin: 0 auto 10px;
-
-        img {
-            width: 100%;
-            height: auto;
-        }
+    h1 {
+        font-size: 5em;
     }
+
+    // .brand-logo {
+    //     width: 100%;
+    //     max-width: 650px;
+    //     text-align: center;
+    //     margin: 0 auto 10px;
+
+    //     img {
+    //         width: 100%;
+    //         height: auto;
+    //     }
+    // }
 
     .prism-nav {
         margin-top: 50px;

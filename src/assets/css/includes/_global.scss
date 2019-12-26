@@ -4,13 +4,21 @@ Global elements
 
 #prism__header {
     width: 100%;
-    padding: 50px 20px 20px;
+    padding: 20px 20px 30px;
     text-align: center;
 
     h1 {
-        font-size: 5em;
-        margin-top: 10px;
+        font-size: 2.5em;
         letter-spacing: 2px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1em;
+        color: #ccc;
     }
 
     .brand-logo {
@@ -26,12 +34,12 @@ Global elements
     }
 
     .prism-nav {
-        margin-top: 50px;
+        margin-top: 40px;
 
         ul {
             padding: 0;
             list-style: none;
-            font-weight: 800;
+            font-weight: 500;
             display: flex;
             justify-content: center;
 
@@ -40,6 +48,14 @@ Global elements
             }
 
         }
+    }
+
+    .prism-cover {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     }
 }
 
@@ -59,7 +75,7 @@ Global elements
                 display: inline-block;
                 width: 30px;
                 height: 30px;
-                border-radius: 30px;
+                // border-radius: 30px;
                 background-color: #ccc;
                 text-align: center;
 

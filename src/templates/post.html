@@ -1,7 +1,7 @@
 {% extends "includes/skeleton_content.html" %}
 
 {% block more_section %}
-<section id="ga-content_pager">
+<section id="ga-content_pager" class="col-md-8 offset-md-2">
 {% if not content_next is none %}
     <div class="next">
         <a class="ga-highlight" href="{{ Router.gen_permalink_by_content(content_next) }}">{{ content_next.get_meta('title') }}</a>
@@ -28,7 +28,7 @@
 {% endblock more_section %}
 
 {% block more_content -%}
-<div id="ga-tags">
+<div id="ga-tags" class="col-md-8 offset-md-2">
     {% for tag in content.get_meta('tags') %}
     <span class="ga-tag">
         <a class="ga-highlight" href="{{ Router.gen_permalink('tag', tag, 1) }}">#{{- tag -}}</a>

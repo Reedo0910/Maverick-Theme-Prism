@@ -2,7 +2,7 @@
 
 {% block more_section %}
 
-<section id="ga-archive_list" class="ga-section" data-title="Archives">
+<section id="ga-archive_list" class="ga-section col-md-8 offset-md-2" data-title="Archives">
     <ul>
         {% for content in content_list %}
         <li>
@@ -15,7 +15,7 @@
     </ul>
 </section>
 
-<section class="ga-section ga-mono" id="ga-pager">
+<section class="ga-section ga-mono col-md-8 offset-md-2" id="ga-pager">
     {% if current_page > 1 %}
         <a prev class="ga-highlight" href="{{ Router.gen_permalink('archives', '', current_page-1) }}">Prev</a>
     {% endif %}

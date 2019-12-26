@@ -28,7 +28,7 @@ def build_navs(navs):
     fp = filterPlaceholders
     list = ['<li><a class="no-link text-uppercase" href="%s" target="%s">%s</a></li>'
             % (fp(item['url']), fp(item['target']), fp(item['name'])) for item in navs]
-    list.append('<li><a href="#" target="_self" class="search-form-input no-link">%s</a></li>' % tr('Search'))
+    list.append('<li><a href="#" target="_self" class="search-form-input no-link text-uppercase">%s</a></li>' % tr('Search'))
     return '<ul>%s</ul>' % (''.join(list))
 
 

@@ -11,7 +11,7 @@
 <section id="prism__post-list" class="prism-section row" data-title="Posts">
     {% for content in content_list %}
     <article class="yue prism-post-item col-md-8 offset-md-2">
-        <h2 class="prism-post-item-title"><a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="__self">{{ content.meta['title'] }}</a></h2>
+        <h1 class="prism-post-item-title"><a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="__self">{{ content.meta['title'] }}</a></h1>
         <div class="prism-post-item-time">
             <a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="__self">
                 <time class="text-uppercase">
@@ -19,11 +19,7 @@
                 </time>
             </a>
         </div>
-        <!-- {% if content.meta['showfull'] %} -->
-        {{ content.parsed }}
-        <!-- {% else %}
-        <p>{{ content.excerpt }}</p>
-        {% endif %} -->
+        <div class="prism-content">{{ content.parsed }}</div>
     </article>
     {% endfor %}
 </section>
@@ -39,7 +35,7 @@
 </section>
 
 <section id="prism__external_links" class="prism-section">
-    <h2>Links</h2>
+    <h2 class="text-uppercase">Links</h2>
     <ul>
         {% for item in config.external_links %}
         <li>

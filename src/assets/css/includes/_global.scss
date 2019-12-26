@@ -10,6 +10,7 @@ Global elements
     h1 {
         font-size: 5em;
         margin-top: 10px;
+        letter-spacing: 2px;
     }
 
     .brand-logo {
@@ -54,22 +55,22 @@ Global elements
             justify-content: center;
 
             li {
-                margin: 0 30px;
+                margin: 0 10px;
                 display: inline-block;
-                width: 40px;
-                height: 40px;
-                border-radius: 40px;
+                width: 30px;
+                height: 30px;
+                border-radius: 30px;
                 background-color: #ccc;
                 text-align: center;
 
                 &:hover {
-                    background-color: #bbb;
+                    background-color: #999;
                 }
 
                 a {
                     color: #fff;
-                    font-size: 18px;
-                    line-height: 40px;
+                    font-size: 16px;
+                    line-height: 30px;
                     vertical-align: middle;
                 }
             }

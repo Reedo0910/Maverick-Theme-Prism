@@ -65,7 +65,7 @@
   .yue a {
     word-wrap: break-word;
     color: $black;
-    // @include a-highlight()
+    @include my-link()
   }
 
   .yue .dplayer-menu .dplayer-menu-item a {

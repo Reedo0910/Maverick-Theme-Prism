@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /**
-* author: 熊猫小A
+* author: Zeee
 */
 
 @import "includes/normalize";
@@ -19,6 +19,15 @@ html {
 body {
     color: $black;
     font-family: $ga-font-sans;
+}
+
+@mixin my-link {
+    text-decoration: none;
+    color: #ccc;
+
+    &:hover {
+        opacity: .8;
+    }
 }
 
 @import "includes/bootstrap-grid";

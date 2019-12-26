@@ -6,16 +6,21 @@
     padding-left: 20px;
     padding-right: 20px;
 
-    h2.prism-post-item-title,
+    h1.prism-post-item-title,
     .prism-post-item-time {
         text-align: center;
     }
 
-    h2.prism-post-item-title a {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 500;
-        font-style: normal;
+    h1.prism-post-item-title {
+        margin-bottom: .5em;
+
+        a {
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-style: normal;
+        }
     }
 
     .prism-post-item-time {

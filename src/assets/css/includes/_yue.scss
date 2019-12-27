@@ -264,21 +264,27 @@
     margin-bottom: 1.5em;
     font-size: 0.96em;
     box-sizing: border-box;
+    border-top: 1px solid #efefee;
+    border-bottom: 1px solid #efefee;
 }
 
 .yue th,
 .yue td {
-    text-align: left;
     padding: 4px 8px 4px 10px;
-    border: 1px solid #dadada;
+    text-align: left;
+    // border: 1px solid #dadada;
+}
+
+.yue th {
+    background-color: #efefee;
 }
 
 .yue td {
     vertical-align: top;
 }
 
-.yue tr:nth-child(even) {
-    background-color: #efefee;
+.yue tr {
+    border-bottom: 1px solid #efefee;
 }
 
 .yue iframe {

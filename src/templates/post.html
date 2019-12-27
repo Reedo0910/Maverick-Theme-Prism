@@ -1,10 +1,10 @@
 {% extends "includes/skeleton_content.html" %}
 
 {% block more_section %}
-<section id="ga-content_pager" class="col-md-8 offset-md-2">
+<section id="prism__content__pagination" class="col-md-8 offset-md-2">
 {% if not content_next is none %}
     <div class="next">
-        <a class="ga-highlight" href="{{ Router.gen_permalink_by_content(content_next) }}">{{ content_next.get_meta('title') }}</a>
+        <a class="no-link" href="{{ Router.gen_permalink_by_content(content_next) }}" target="_self">{{ content_next.get_meta('title') }}</a>
         <p class="yue">{{ content_next.excerpt }}</p>
     </div>
 {% else %}
@@ -15,7 +15,7 @@
 {% endif %}
 {% if not content_prev is none %}
     <div class="prev">
-        <a class="ga-highlight" href="{{ Router.gen_permalink_by_content(content_prev) }}">{{ content_prev.get_meta('title') }}</a>
+        <a class="no-link" href="{{ Router.gen_permalink_by_content(content_prev) }}" target="_self">{{ content_prev.get_meta('title') }}</a>
         <p class="yue">{{ content_prev.excerpt }}</p>
     </div>
 {% else %}
@@ -28,10 +28,10 @@
 {% endblock more_section %}
 
 {% block more_content -%}
-<div id="ga-tags" class="col-md-8 offset-md-2">
+<div id="prism__tags" class="col-md-8 offset-md-2">
     {% for tag in content.get_meta('tags') %}
     <span class="ga-tag">
-        <a class="ga-highlight" href="{{ Router.gen_permalink('tag', tag, 1) }}">#{{- tag -}}</a>
+        <a class="no-link" href="{{ Router.gen_permalink('tag', tag, 1) }}">#{{- tag -}}</a>
     </span>
     {% endfor %}
 </div>

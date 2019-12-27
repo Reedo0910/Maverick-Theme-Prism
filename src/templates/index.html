@@ -8,12 +8,12 @@
 
 {% block more_section %}
 
-<section id="prism__post-list" class="prism-section row" data-title="Posts">
+<section id="prism__post-list" class="prism-section row">
     {% for content in content_list %}
     <article class="yue prism-post-item col-md-8 offset-md-2">
-        <h1 class="prism-post-item-title"><a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="__self">{{ content.meta['title'] }}</a></h1>
-        <div class="prism-post-item-time">
-            <a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="__self">
+        <h1 class="prism-post-title"><a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">{{ content.meta['title'] }}</a></h1>
+        <div class="prism-post-time">
+            <a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">
                 <time class="text-uppercase">
                     {{ content.meta['date'].format("MMMM DD YYYY") }}
                 </time>
@@ -26,11 +26,11 @@
 
 <section class="prism-section" id="prism__paginate">
     {% if current_page > 1 %}
-    <a prev class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page-1) }}">Prev</a>
+    <a prev class="no-link" href="{{ Router.gen_permalink('index', '', current_page-1) }}">Prev</a>
     {% endif %}
     <!-- <span>Page {{ current_page }} of {{ max_pages }}</span> -->
     {% if current_page < max_pages %}
-    <a next class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page+1) }}">Next</a>
+    <a next class="no-link" href="{{ Router.gen_permalink('index', '', current_page+1) }}">Next</a>
     {% endif %}
 </section>
 

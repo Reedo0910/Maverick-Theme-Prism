@@ -1,7 +1,7 @@
 {% extends "includes/skeleton.html" %}
 
 {% macro seo_title(content, config) -%}
-    {{ content.get_meta('title') }} - {{ fp(config.site_name) }}
+{{ content.get_meta('title') }} - {{ fp(config.site_name) }}
 {%- endmacro %}
 
 {% block head %}
@@ -22,18 +22,21 @@
 {% endblock head %}
 
 {% block main %}
-<main>    
+<main>
     <section class="prism-section row" id="prism__content">
         <article class="yue col-md-8 offset-md-2">
             <h1 class="prism-post-title">{{ content.get_meta('title') }}</h1>
+            <div class="prism-post-time">
+                <time class="text-uppercase">
+                    {{ content.meta['date'].format("MMMM DD YYYY") }}
+                </time>
+            </div>
             <span class="ga-post_meta ga-mono">
                 <span>{{ content.get_meta('author') }}</span>
-                <time>
-                    {{ content.get_meta('date').format("YYYY-MM-DD") }}
-                </time>
+
                 {% if len(content.get_meta('categories')) > 0 %}
-                in <a no-style class="category" href="{{ Router.gen_permalink('category', content.get_meta('categories')[0], 1) }}">
-                    {{ content.get_meta('categories')[0] }}
+                <a no-style class="category" href="{{ Router.gen_permalink('category', content.get_meta('categories')[0], 1) }}">
+                {{ content.get_meta('categories')[0] }}
                 </a>
                 {% endif %}
                 {% if config.valine['enable'] and config.valine['visitor'].lower()=='true' and content.get_meta('comment') %}
@@ -50,24 +53,26 @@
     {% block more_section %}{% endblock more_section %}
 
     {% if config.valine['enable'] and content.get_meta('comment') %}
-        <script>
-            var initValine = function () {
-                new Valine({
-                    el: '#vcomments',
-                    appId: '{{ config.valine["appId"] }}',
-                    appKey: '{{ config.valine["appKey"] }}',
-                    placeholder: '{{ config.valine["placeholder"] }}',
-                    notify: {{ config.valine['notify'] }},
-                    visitor: {{ config.valine['visitor'] }},
-                    {% if not config.valine['serverURLs'] is none %}
-                    serverURLs: '{{ config.valine['serverURLs'] }}',
-                    {% endif %}
-                    recordIP: {{ config.valine['recordIP'] }}
-                });
-            }
-        </script>
-        <script defer src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js' onload="initValine()"></script>
-        <div id="vcomments"></div>
+    <script>
+        var initValine = function() {
+            new Valine({
+                el: '#vcomments',
+                appId: '{{ config.valine["appId"] }}',
+                appKey: '{{ config.valine["appKey"] }}',
+                placeholder: '{{ config.valine["placeholder"] }}',
+                notify: { { config.valine['notify'] } },
+                visitor: { { config.valine['visitor'] } },
+                { % if not config.valine['serverURLs'] is none % }
+                serverURLs: '{{ config.valine['
+                serverURLs '] }}',
+                { % endif % }
+                recordIP: { { config.valine['recordIP'] } }
+            });
+        }
+
+    </script>
+    <script defer src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js' onload="initValine()"></script>
+    <div id="vcomments"></div>
     {% endif %}
 
 </main>

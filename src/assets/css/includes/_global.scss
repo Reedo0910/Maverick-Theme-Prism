@@ -10,7 +10,7 @@ Global elements
     h1 {
         font-size: 2.5em;
         letter-spacing: 2px;
-        font-weight: 300;
+        font-weight: 500;
         margin-bottom: 10px;
     }
 
@@ -18,7 +18,7 @@ Global elements
         margin-top: 0;
         margin-bottom: 0;
         font-size: 1em;
-        color: #ccc;
+        color: $text-light;
     }
 
     .brand-logo {
@@ -42,6 +42,7 @@ Global elements
             font-weight: 500;
             display: flex;
             justify-content: center;
+            color: $text-primary;
 
             li {
                 margin: 0 30px;
@@ -76,11 +77,11 @@ Global elements
                 width: 30px;
                 height: 30px;
                 // border-radius: 30px;
-                background-color: #ccc;
+                background-color: $text-light;
                 text-align: center;
 
                 &:hover {
-                    background-color: #999;
+                    background-color: $text-secondary;
                 }
 
                 a {
@@ -95,7 +96,17 @@ Global elements
 
     .copyright {
         text-align: center;
-        margin: 0 auto 10px;
+        margin: 30px 0 auto;
+        padding-bottom: 20px;
+        font-size: .8em;
+
+        .copyright-text {
+            display: inline;
+
+            &.powered-by {
+                color: $text-secondary;
+            }
+        }
     }
 }
 

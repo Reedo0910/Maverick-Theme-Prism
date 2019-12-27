@@ -23,10 +23,10 @@ body {
 
 @mixin my-link {
     text-decoration: none;
-    color: #ccc;
+    color: $text-light;
 
     &:hover {
-        opacity: .8;
+        color: #dfdfdf;
     }
 }
 
@@ -38,5 +38,5 @@ body {
 @import "includes/index";
 @import "includes/content";
 @import "includes/icon";
-@import "includes/photoswipe";
+// @import "includes/photoswipe";
 @import "includes/dplayer";

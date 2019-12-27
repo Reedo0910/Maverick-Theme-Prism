@@ -1,19 +1,14 @@
 .prism-section {
-    // text-align: center;
-}
 
-#prism__post-list {
-    padding-left: 20px;
-    padding-right: 20px;
-
-    h1.prism-post-item-title,
-    .prism-post-item-time {
+    h1.prism-post-title,
+    .prism-post-time {
         text-align: center;
     }
 
-    h1.prism-post-item-title {
+    h1.prism-post-title {
         margin-bottom: .5em;
 
+        &,
         a {
             font-size: 22px;
             text-transform: uppercase;
@@ -23,7 +18,7 @@
         }
     }
 
-    .prism-post-item-time {
+    .prism-post-time {
         margin-bottom: 10px;
 
         time {
@@ -35,5 +30,9 @@
             color: #a8a8a8;
         }
     }
+}
 
+#prism__post-list {
+    padding-left: 20px;
+    padding-right: 20px;
 }

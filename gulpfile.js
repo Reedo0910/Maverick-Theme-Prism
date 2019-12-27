@@ -34,7 +34,7 @@ gulp.task('css', function() {
 
 //JS
 gulp.task('js', function() {
-    return gulp.src(['./src/assets/js/PhotoSwipe.js', './src/assets/js/dplayer.js', './src/assets/js/prism.js'])
+    return gulp.src(['./src/assets/js/dplayer.js', './src/assets/js/prism.js'])
         .pipe(concat('prism.js'))
         .pipe(uglify())
         .pipe(rev())

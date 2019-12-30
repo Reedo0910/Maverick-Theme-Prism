@@ -4,6 +4,8 @@
 {{ tr('Category') }}: {{ cate_name }} - {{ fp(config.site_name) }}
 {% endblock title %}
 
+{% set active_page = Router.gen_permalink('category', cate_name, current_page) %}
+
 {% block more_section %}
 
 <section class="prism-section col-md-8 offset-md-2">

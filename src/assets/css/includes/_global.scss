@@ -46,6 +46,10 @@ Global elements
 
             li {
                 margin: 0 30px;
+
+                a.link-active {
+                    color: $text-light;
+                }
             }
 
         }

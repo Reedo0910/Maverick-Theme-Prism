@@ -1,5 +1,7 @@
 {% extends "includes/skeleton_content.html" %}
 
+{% set active_page = Router.gen_permalink_by_content(content) %}
+
 {% block more_section %}
 <section id="prism__pagination" class="prism-pagination" class="col-md-8 offset-md-2">
     <ul>
@@ -31,7 +33,7 @@
     {% if len(content.get_meta('categories')) > 0 %}
     <span>/</span>
     <span>
-        <a class="category no-link" href="{{ Router.gen_permalink('category', content.get_meta('categories')[-1], 1) }}">
+        <a class="category no-link" href="{{ Router.gen_permalink('category', content.get_meta('categories')[-1], 1) }}" target="_self">
         {{ content.get_meta('categories')[-1] }}
         </a>
     </span>
@@ -44,7 +46,7 @@
     <span>/</span>
     {% for tag in content.get_meta('tags') %}
     <span class="prism-tag">
-        <a class="no-link" href="{{ Router.gen_permalink('tag', tag, 1) }}">#{{- tag -}}</a>
+        <a class="no-link" href="{{ Router.gen_permalink('tag', tag, 1) }}" target="_self">#{{- tag -}}</a>
     </span>
     {% endfor %}
     {% endif %}

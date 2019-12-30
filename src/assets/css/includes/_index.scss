@@ -66,3 +66,49 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.prism-post-meta {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+    color: $text-light;
+
+    a.no-link {
+        color: $text-secondary;
+    }
+
+    span {
+        font-size: 14px;
+        margin-right: .3em;
+    }
+
+    span:last-child {
+        margin-right: 0;
+    }
+}
+
+#prism__content__pagination {
+    ul {
+        display: flex;
+        padding: 0;
+        justify-content: center;
+
+        li {
+            list-style: none;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            margin: 0 10px;
+            font-size: 14px;
+
+            &.next i {
+                margin-right: .5em;
+            }
+
+            &.prev i {
+                margin-left: .5em;
+            }
+        }
+
+
+    }
+}

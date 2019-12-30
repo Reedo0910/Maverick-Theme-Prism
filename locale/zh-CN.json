@@ -2,10 +2,12 @@
     "Read More": "阅读全文",
     "Search": "搜索",
     "No More": "没有了",
-    "This is the oldest one.": "这是最旧的文章",
-    "This is the latest one.": "这是最新的文章",
+    "Viewing the oldest one.": "这是最旧的文章",
+    "Viewing the newest one.": "这是最新的文章",
     "Catch me: ": "抓住我：",
     "Category": "分类",
     "Tag": "标签",
-    "Archives": "归档"
+    "Archives": "归档",
+    "Older": "更旧",
+    "Newer": "更新"
 }

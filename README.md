@@ -1,6 +1,6 @@
 # Prism
 
-Prism© [Zeee](https://github.com/Reedo0910)是一个用于 [Maverick](https://github.com/AlanDecode/Maverick)的简洁风主题。
+Prism是一个适用于 [Maverick](https://github.com/AlanDecode/Maverick)的简洁风主题。
 
 
 
@@ -42,7 +42,7 @@ Prism© [Zeee](https://github.com/Reedo0910)是一个用于 [Maverick](https://g
    }
    ```
 
-   **注意：** 请务必移除`conf.py`其它的template属性，以免产生冲突。
+   **注意：** 请务必移除`conf.py`中其它的template属性，以免产生冲突。
 
 4. 主题安装完成，尽情享用吧～
 
@@ -57,3 +57,7 @@ Prism© [Zeee](https://github.com/Reedo0910)是一个用于 [Maverick](https://g
 ```
 git submodule update --remote templates/Prism
 ```
+
+
+
+© [Zeee](https://github.com/Reedo0910)

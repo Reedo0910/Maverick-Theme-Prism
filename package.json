@@ -4,7 +4,7 @@
     "description": "A theme for Maverick",
     "author": "Reedo0910 <sea.sand@live.cn>, Zeee <ericrlee@outlook.com>",
     "scripts": {
-        "deploy": "push-dir --dir=dist --branch=deploy --cleanup --local-branch-name"
+        "deploy": "push-dir --dir=dist --branch=deploy --cleanup"
     },
     "devDependencies": {
         "del": "^3.0.0",

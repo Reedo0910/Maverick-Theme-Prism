@@ -1,19 +1,21 @@
 {% extends "includes/skeleton_archive.html" %}
 
 {% block title %}
-    {{ tr('Tag') }}: {{ tag_name }} - {{ fp(config.site_name) }}
+{{ tr('Tag') }}: {{ tag_name }} - {{ fp(config.site_name) }}
 {% endblock title %}
 
 {% block more_section %}
 
-<section id="ga-archive_list" class="ga-section" data-title="#{{- tag_name -}}">
-    <ul>
+<section class="prism-section col-md-8 offset-md-2">
+    <h1 class="prism-post-title section-title">{{tr('Tag')}}: <span class="text-normal">{{- tag_name -}}</span></h1>
+    <ul class="prism-list">
         {% for content in content_list %}
-        <li>
-            <h1><a target="_self" class="ga-highlight" href="{{ Router.gen_permalink_by_content(content) }}">{{ content.meta['title'] }}</a></h1>
-            <time class="ga-mono" datetime="{{ content.meta['date'] }}">
-                {{ content.meta['date'].format("YYYY-MM-DD") }}
-            </time>
+        <li class="prism-list-item">
+            <h3 class="prism-list-item-text">
+                <time>
+                    {{ content.meta['date'].format("YYYY MM DD") }}
+                </time>
+                <a class="no-link item-title" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">{{ content.meta['title'] }}</a></h3>
         </li>
         {% endfor %}
     </ul>
@@ -21,11 +23,10 @@
 
 <section class="ga-section ga-mono" id="ga-pager">
     {% if current_page > 1 %}
-        <a prev class="ga-highlight" href="{{ Router.gen_permalink('tag', tag_name, current_page-1) }}">Prev</a>
+    <a prev class="ga-highlight" href="{{ Router.gen_permalink('tag', tag_name, current_page-1) }}">Prev</a>
     {% endif %}
-    <span>Page {{ current_page }} of {{ max_pages }}</span>
     {% if current_page < max_pages %}
-        <a next class="ga-highlight" href="{{ Router.gen_permalink('tag', tag_name, current_page+1) }}">Next</a>
+    <a next class="ga-highlight" href="{{ Router.gen_permalink('tag', tag_name, current_page+1) }}">Next</a>
     {% endif %}
 </section>
 

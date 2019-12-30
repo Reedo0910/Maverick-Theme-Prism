@@ -30,6 +30,36 @@
             color: #a8a8a8;
         }
     }
+
+    h1.prism-post-title.section-title {
+        margin-bottom: 2.5em
+    }
+
+    .prism-list {
+        padding: 0;
+        margin-bottom: 5em;
+
+        .prism-list-item {
+            list-style: none;
+
+            .prism-list-item-text {
+                font-weight: 400;
+                color: $text-primary;
+
+                .item-title {
+                    letter-spacing: 1px;
+                }
+
+                time {
+                    color: $text-secondary;
+                    margin-right: .8em;
+                    font-size: 80%;
+                }
+            }
+        }
+    }
+
+
 }
 
 #prism__post-list {

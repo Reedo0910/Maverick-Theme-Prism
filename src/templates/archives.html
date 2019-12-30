@@ -1,24 +1,21 @@
 {% extends "includes/skeleton_archive.html" %}
 
 {% block title %}
-    {{ tr('Archives') }} - {{ fp(config.site_name) }}
+{{ tr('Archives') }} - {{ fp(config.site_name) }}
 {% endblock title %}
 
 {% block more_section %}
 
 <section class="prism-section col-md-8 offset-md-2">
-    <ul>
+    <h1 class="prism-post-title section-title">{{tr('Archives')}}</h1>
+    <ul class="prism-list">
         {% for content in content_list %}
-        <div>{{ content.meta['date'].format("YYYY") }}</div>
-        <li>
-            <h1 class="prism-post-title"><a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">{{ content.meta['title'] }}</a></h1>
-            <div class="prism-post-time">
-                <a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">
-                    <time class="text-uppercase">
-                        {{ content.meta['date'].format("MMMM DD YYYY") }}
-                    </time>
-                </a>
-            </div>
+        <li class="prism-list-item">
+            <h3 class="prism-list-item-text">
+                <time>
+                    {{ content.meta['date'].format("YYYY MM DD") }}
+                </time>
+                <a class="no-link item-title" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">{{ content.meta['title'] }}</a></h3>
         </li>
         {% endfor %}
     </ul>
@@ -28,7 +25,6 @@
     {% if current_page > 1 %}
     <a prev class="no-link" href="{{ Router.gen_permalink('archives', '', current_page-1) }}" target="_self">Prev</a>
     {% endif %}
-    <span>Page {{ current_page }} of {{ max_pages }}</span>
     {% if current_page < max_pages %}
     <a next class="no-link" href="{{ Router.gen_permalink('archives', '', current_page+1) }}" target="_self">Next</a>
     {% endif %}

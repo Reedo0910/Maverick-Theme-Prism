@@ -34,15 +34,15 @@ Prism© [Zeee](https://github.com/Reedo0910)是一个用于 [Maverick](https://g
 
 3. 在博客根目录的`conf.py`中，将template属性设置为：
 
-  ```
-  template = {
-      "name": "Prism",
-      "type": "local",
-      "path": "../templates/Prism"
-  }
-  ```
+   ```
+   template = {
+       "name": "Prism",
+       "type": "local",
+       "path": "../templates/Prism"
+   }
+   ```
 
-	**注意：** 请务必移除`conf.py`其它的template属性，以免产生冲突。
+   **注意：** 请务必移除`conf.py`其它的template属性，以免产生冲突。
 
 4. 主题安装完成，尽情享用吧～
 

@@ -24,24 +24,26 @@
     {% endfor %}
 </section>
 
-<section class="prism-section" id="prism__paginate">
-    {% if current_page > 1 %}
-    <a prev class="no-link" href="{{ Router.gen_permalink('index', '', current_page-1) }}">Prev</a>
-    {% endif %}
-    <!-- <span>Page {{ current_page }} of {{ max_pages }}</span> -->
-    {% if current_page < max_pages %}
-    <a next class="no-link" href="{{ Router.gen_permalink('index', '', current_page+1) }}">Next</a>
-    {% endif %}
-</section>
-
-<section id="prism__external_links" class="prism-section">
-    <h2 class="text-uppercase">Links</h2>
+<section id="prism__page__pagination" class="prism-pagination" class="col-md-8 offset-md-2">
     <ul>
-        {% for item in config.external_links %}
-        <li>
-            <a class="no-link" target="_blank" href="{{ fp(item['url']) }}">{{ fp(item['name']) }}</a>：{{ fp(item['brief']) }}
+        {% if current_page > 1 %}
+        <li class="next">
+            <a class="no-link" href="{{ Router.gen_permalink('index', '', current_page-1) }}" target="_self"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</a>
         </li>
-        {% endfor %}
+        {% else %}
+        <li class="next text-muted">
+            <span title="{{tr('Viewing the first page.')}}"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</span>
+        </li>
+        {% endif %}
+        {% if current_page < max_pages %}
+        <li class="prev">
+            <a class="no-link" href="{{ Router.gen_permalink('index', '', current_page+1) }}" target="_self">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </li>
+        {% else %}
+        <li class="prev text-muted">
+            <span title="{{tr('Viewing the last page.')}}">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </li>
+        {% endif %}
     </ul>
 </section>
 

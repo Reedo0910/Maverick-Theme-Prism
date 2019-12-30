@@ -96,7 +96,7 @@ Global elements
 
     .copyright {
         text-align: center;
-        margin: 30px 0 auto;
+        margin: 5px 0 auto;
         padding-bottom: 20px;
         font-size: .8em;
 
@@ -111,17 +111,27 @@ Global elements
 }
 
 #prism__external_links {
-    h2 {
-        text-align: center;
-    }
-
     ul {
+        margin: 0;
         padding: 0;
         list-style: none;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
 
         li {
-            padding: 20px 0;
+            padding: 10px 0;
+            font-size: 14px;
+
+            span {
+                margin: 0 10px;
+            }
+
+            &:last-child span {
+                display: none;
+            }
         }
+
     }
 }

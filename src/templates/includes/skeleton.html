@@ -48,6 +48,17 @@
                         </nav>
                     </div>
 
+                    <section id="prism__external_links">
+                        <ul>
+                            {% for item in config.external_links %}
+                            <li>
+                                <a class="no-link" target="_blank" href="{{ fp(item['url']) }}">{{ fp(item['name']) }}</a>：{{ fp(item['brief']) }}
+                                <span>|</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+
                     <div class="copyright">
                         <p class="copyright-text">
                             <span class="brand">{{ fp(config.site_name) }}</span>

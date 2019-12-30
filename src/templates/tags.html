@@ -21,13 +21,27 @@
     </ul>
 </section>
 
-<section class="ga-section ga-mono" id="ga-pager">
-    {% if current_page > 1 %}
-    <a prev class="ga-highlight" href="{{ Router.gen_permalink('tag', tag_name, current_page-1) }}">Prev</a>
-    {% endif %}
-    {% if current_page < max_pages %}
-    <a next class="ga-highlight" href="{{ Router.gen_permalink('tag', tag_name, current_page+1) }}">Next</a>
-    {% endif %}
+<section id="prism__list__pagination" class="prism-pagination" class="col-md-8 offset-md-2">
+    <ul>
+        {% if current_page > 1 %}
+        <li class="next">
+            <a class="no-link" href="{{ Router.gen_permalink('tag', tag_name, current_page-1) }}" target="_self"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</a>
+        </li>
+        {% else %}
+        <li class="next text-muted">
+            <span title="{{tr('Viewing the first page.')}}"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</span>
+        </li>
+        {% endif %}
+        {% if current_page < max_pages %}
+        <li class="prev">
+            <a class="no-link" href="{{ Router.gen_permalink('tag', tag_name, current_page+1) }}" target="_self">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </li>
+        {% else %}
+        <li class="prev text-muted">
+            <span title="{{tr('Viewing the last page.')}}">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </li>
+        {% endif %}
+    </ul>
 </section>
 
 {% endblock more_section %}

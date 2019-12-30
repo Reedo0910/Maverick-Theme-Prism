@@ -43,7 +43,7 @@ template = {
 }
 ```
 
-**注意：**请务必移除`conf.py`其它的template属性，以免产生冲突。
+**注意：** 请务必移除`conf.py`其它的template属性，以免产生冲突。
 
 4. 主题安装完成，尽情享用吧～
 
@@ -53,7 +53,7 @@ template = {
 
 > 该方法仅适用于根据**方法二**部署的主题。若您使用的是方法一，则需要自行重新下载主题发行包并安装。
 
-执行以下命令更新主题：
+使用以下命令来更新Prism：
 
 ```
 git submodule update --remote templates/Prism

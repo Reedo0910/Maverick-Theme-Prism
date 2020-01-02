@@ -17,8 +17,8 @@ html {
 }
 
 body {
-    color: $black;
-    font-family: $ga-font-sans;
+    color: $text-primary;
+    font-family: $pr-font-sans;
 }
 
 @mixin my-link {

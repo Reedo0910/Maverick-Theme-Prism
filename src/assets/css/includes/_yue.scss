@@ -7,17 +7,9 @@
  */
 
 .yue {
-    line-height: $contentLineHeight;
+    line-height: 1.7em;
     letter-spacing: 0.01em;
 }
-
-// .yue ::-moz-selection {
-//     background-color: $yellow;
-// }
-
-// .yue ::selection {
-//     background-color: $yellow;
-// }
 
 .yue h2,
 .yue h3,
@@ -231,7 +223,7 @@
     padding: 1px 2px;
     border: 1px solid #eee;
     border-radius: 3px;
-    font-family: $ga-font-mono;
+    font-family: $pr-font-mono;
     word-wrap: break-word;
 }
 
@@ -243,7 +235,7 @@
     overflow: auto;
     line-height: 1.5;
     font-size: 0.9em;
-    font-family: $ga-font-mono;
+    font-family: $pr-font-mono;
     color: #4c4c4c;
     background-color: #f9f9f7;
 }

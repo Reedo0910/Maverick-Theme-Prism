@@ -24,7 +24,7 @@
         <div class="prism-content">{{ content.parsed }}</div>
         {% if config.valine['enable'] and content.get_meta('comment') %}
         <div class="prism-action-bar">
-            <div class="comment-action action-item"><a class="no-link text-uppercase" href="{{ Router.gen_permalink_by_content(content) + '#prism__comment' }}" target="_self"><i class="fa fa-comments"></i>{{ tr('Comment') }}</a></div>
+            <div class="comment-action action-item"><a class="no-link text-uppercase" href="{{ Router.gen_permalink_by_content(content) + '#prism__comment' }}" target="_self"><i class="fa fa-comment"></i>{{ tr('Comment') }}</a></div>
         </div>
         {% endif %}
     </article>

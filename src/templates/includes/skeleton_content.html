@@ -10,7 +10,7 @@
 <meta name="description" content="{{ content.excerpt }}" />
 <meta property="og:title" content="{{ seo_title(content, config) }}" />
 <meta property="og:description" content="{{ content.excerpt }}" />
-<meta property="og:site_name" content="{{ (config.site_name) }}" />
+<meta property="og:site_name" content="{{ fp(config.site_name) }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ Router.gen_permalink_by_content(content) }}" />
 <meta property="og:image" content="{{ content.get_meta('banner') }}" />
@@ -43,23 +43,7 @@
     {% if config.valine['enable'] and content.get_meta('comment') %}
     <script>
         var initValine = function() {
-            new Valine({
-                el: '#vcomments',
-                appId: '{{ config.valine["appId"] }}',
-                appKey: '{{ config.valine["appKey"] }}',
-                placeholder: '{{ config.valine["placeholder"] }}',
-                notify: {{ config.valine['notify'] }},
-                {% if config.valine['avatar'] %}
-                avatar: {{ config.valine['avatar'] }},
-                {% else %}
-                avatar: 'identicon',
-                {% endif %}
-                visitor: {{ config.valine['visitor'] }},
-                {% if not config.valine['serverURLs'] is none %}
-                serverURLs: '{{ config.valine["serverURLs"] }}',
-                {% endif %}
-                recordIP: {{ config.valine['recordIP'] }}
-            });
+            new Valine({{ json.dumps(config.valine) }});
         }
 
     </script>

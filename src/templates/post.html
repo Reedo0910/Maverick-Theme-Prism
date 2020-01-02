@@ -38,10 +38,6 @@
         </a>
     </span>
     {% endif %}
-    {% if config.valine['enable'] and config.valine['visitor'].lower()=='true' and content.get_meta('comment') %}
-    <span>/</span>
-    <span class="leancloud_visitors"><i class="leancloud-visitors-count"></i> Views</span>
-    {% endif %}
     {% if len(content.get_meta('tags')) > 0 %}
     <span>/</span>
     {% for tag in content.get_meta('tags') %}
@@ -49,6 +45,10 @@
         <a class="no-link" href="{{ Router.gen_permalink('tag', tag, 1) }}" target="_self">#{{- tag -}}</a>
     </span>
     {% endfor %}
+    {% endif %}
+    {% if config.valine['enable'] and config.valine['visitor'].lower()=='true' and content.get_meta('comment') %}
+    <span>/</span>
+    <span class="leancloud_visitors"><span class="leancloud-visitors-count"></span> Views</span>
     {% endif %}
 </div>
 

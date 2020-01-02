@@ -31,26 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     img.onload = function() {
                         var parent = this.parentFigure;
-                        setVerticleFigureStyle(parent);
                         parent.removeAttribute('size-undefined');
                         var w = parseFloat(this.width);
                         var h = parseFloat(this.height);
                         parent.style.flexGrow = String(w * 50 / h);
+                        if (h > w) {
+                            parent.className += ' vertical-figure';
+                        }
                     };
                 } else {
-                    setVerticleFigureStyle(figure);
+                    var width = parseFloat(figure.dataset.width);
+                    var height = parseFloat(figure.dataset.height);
+                    if (height > width) {
+                        figure.className += ' vertical-figure';
+                    }
                 }
             })();
         }
     })();
-
-    function setVerticleFigureStyle(figureElement) {
-        var width = parseFloat(figureElement.dataset.width);
-        var height = parseFloat(figureElement.dataset.height);
-        if (height > width) {
-            figureElement.className += ' vertical-figure';
-        }
-    }
 
     // set cover
     // (function() {

@@ -48,19 +48,29 @@
                 appId: '{{ config.valine["appId"] }}',
                 appKey: '{{ config.valine["appKey"] }}',
                 placeholder: '{{ config.valine["placeholder"] }}',
-                notify: { { config.valine['notify'] } },
-                visitor: { { config.valine['visitor'] } },
-                { % if not config.valine['serverURLs'] is none % }
-                serverURLs: '{{ config.valine['
-                serverURLs '] }}',
-                { % endif % }
-                recordIP: { { config.valine['recordIP'] } }
+                notify: {{ config.valine['notify'] }},
+                {% if config.valine['avatar'] %}
+                avatar: {{ config.valine['avatar'] }},
+                {% else %}
+                avatar: 'identicon',
+                {% endif %}
+                visitor: {{ config.valine['visitor'] }},
+                {% if not config.valine['serverURLs'] is none %}
+                serverURLs: '{{ config.valine["serverURLs"] }}',
+                {% endif %}
+                recordIP: {{ config.valine['recordIP'] }}
             });
         }
 
     </script>
     <script defer src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js' onload="initValine()"></script>
-    <div id="vcomments"></div>
+    <div class="prism-comment-section container" id="prism__comment">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div id="vcomments"></div>
+            </div>
+        </div>
+    </div>
     {% endif %}
 
 </main>

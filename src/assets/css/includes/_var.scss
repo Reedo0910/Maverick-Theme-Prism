@@ -6,11 +6,8 @@ $faded-black-light: rgba($color: $black, $alpha: 0.6);
 
 $animationTimingFunc: cubic-bezier(.25, .46, .45, .94);
 
-$ga-font-sans: -apple-system,
-system-ui,
-sans-serif;
-$ga-font-mono: 'Fira Code',
-$ga-font-sans;
+$ga-font-sans: -apple-system, system-ui, sans-serif;
+$ga-font-mono: 'Fira Code', $ga-font-sans;
 $contentLineHeight: 1.7;
 
 $mainWidth: 660px;

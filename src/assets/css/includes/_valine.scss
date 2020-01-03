@@ -44,6 +44,13 @@
             }
         }
 
+        .vquote {
+            color: $text-primary;
+            margin-top: 1em;
+            padding-left: 1em;
+            border-left: 1px solid $text-light;
+        }
+
         .vmeta {
             display: inline;
 

@@ -40,9 +40,6 @@
             <footer id="prism__footer">
                 <section>
                     <div>
-                        <span class="footer-addon">
-                            {{ fp(config.footer_addon) }}
-                        </span>
                         <nav class="social-links">
                             {{ build_links(config.social_links) }}
                         </nav>
@@ -67,6 +64,9 @@
                         <p class="copyright-text powered-by">
                             | Powered by <a href="https://github.com/AlanDecode/Maverick" class="no-link" target="_blank">Maverick</a> | Theme <a href="https://github.com/Reedo0910/Maverick-Theme-Prism" target="_blank" class="no-link">Prism</a>
                         </p>
+                    </div>
+                    <div class="footer-addon">
+                        {{ fp(config.footer_addon) }}
                     </div>
                 </section>
                 <script>

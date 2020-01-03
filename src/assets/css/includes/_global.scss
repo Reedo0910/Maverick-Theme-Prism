@@ -107,7 +107,7 @@ Global elements
 
     .copyright {
         text-align: center;
-        margin: 5px 0 auto;
+        margin: 5px 0 0;
         padding-bottom: 20px;
         font-size: .8em;
 
@@ -118,6 +118,12 @@ Global elements
                 color: $text-secondary;
             }
         }
+    }
+
+    .footer-addon {
+        margin-top: 5px;
+        text-align: center;
+        font-size: .8em;
     }
 }
 

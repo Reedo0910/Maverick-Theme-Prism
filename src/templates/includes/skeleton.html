@@ -49,7 +49,7 @@
                         <ul>
                             {% for item in config.external_links %}
                             <li>
-                                <a class="no-link" target="_blank" href="{{ fp(item['url']) }}">{{ fp(item['name']) }}</a>：{{ fp(item['brief']) }}
+                                <a class="no-link" target="_blank" href="{{ fp(item['url']) }}" rel="noopener noreferrer nofollow">{{ fp(item['name']) }}</a>：{{ fp(item['brief']) }}
                                 <span>|</span>
                             </li>
                             {% endfor %}
@@ -62,7 +62,7 @@
                             <span>Copyright © {{ moment.now().format('%Y') }} {{ fp(config.author) }}</span>
                         </p>
                         <p class="copyright-text powered-by">
-                            | Powered by <a href="https://github.com/AlanDecode/Maverick" class="no-link" target="_blank">Maverick</a> | Theme <a href="https://github.com/Reedo0910/Maverick-Theme-Prism" target="_blank" class="no-link">Prism</a>
+                            | Powered by <a href="https://github.com/AlanDecode/Maverick" class="no-link" target="_blank" rel="noopener noreferrer nofollow">Maverick</a> | Theme <a href="https://github.com/Reedo0910/Maverick-Theme-Prism" target="_blank" class="no-link" rel="noopener noreferrer nofollow">Prism</a>
                         </p>
                     </div>
                     <div class="footer-addon">

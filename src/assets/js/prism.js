@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (typeof target === 'undefined' || (target != '' && target != '_self')) {
                 if (element.host != domain) {
                     element.setAttribute('target', '_blank');
+                    element.setAttribute('rel', 'noopener noreferrer nofollow')
                 }
             }
         }

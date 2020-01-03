@@ -24,7 +24,7 @@ def tr(str, locale="english"):
 
 def build_links(links):
     fp = filterPlaceholders
-    str = ''.join(['<li><a class="no-link" title="%s" href="%s" target="_blank"><i class="%s"></i></a></li>'
+    str = ''.join(['<li><a class="no-link" title="%s" href="%s" target="_blank" rel="noopener noreferrer nofollow"><i class="%s"></i></a></li>'
                       % (fp(item['name']), fp(item['url']), fp(item['icon'])) for item in links])
     return '<ul>%s</ul>' % str
 

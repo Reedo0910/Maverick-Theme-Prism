@@ -1,5 +1,5 @@
 package-lock.json
-templates/**/*
+/templates/
 .DS_Store
 node_modules/
 temp
@@ -10,7 +10,7 @@ dist/
 test_dist
 cached_imgs
 tmp
-assets/
+/assets/
 deploy/
 
 *.sh

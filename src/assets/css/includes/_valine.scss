@@ -1,0 +1,63 @@
+#prism__comment {
+    margin-top: 30px;
+}
+
+#vcomments {
+    line-height: 1.5;
+
+    .vwrap {
+        border: 1px solid #ccc;
+        border-radius: 0px;
+
+        .vheader .vinput {
+            border-bottom: 1px solid #ccc;
+        }
+    }
+
+    .vbtn.vsubmit {
+        background-color: $text-primary;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+    }
+
+    .vinfo {
+        margin-top: 30px;
+    }
+
+    .vlist .vcard {
+        .vimg {
+            border-radius: 0;
+        }
+
+        .vhead {
+            display: inline-block;
+
+            .vsys {
+                display: none;
+            }
+
+            .vnick {
+                color: $text-primary;
+                font-size: 1.1em;
+                margin-right: .5em;
+            }
+        }
+
+        .vmeta {
+            display: inline;
+
+            .vtime {
+                color: $text-primary;
+            }
+        }
+
+        .vcontent {
+            color: $text-primary;
+
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+}

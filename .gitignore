@@ -11,7 +11,7 @@ test_dist
 cached_imgs
 tmp
 /assets/
-deploy/
+/deploy/
 
 *.sh
 *.txt

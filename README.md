@@ -12,7 +12,7 @@
 
 ## 介绍
 
-Prism的主题设计借鉴自 *[Hello Sandwich](http://www.hellosandwich.jp/)*。
+Prism主题的设计借鉴自 *[Hello Sandwich](http://www.hellosandwich.jp/)*。
 
 我一直以来很想做一个符合「侘寂」（Wabi-sabi）美学的主题。直到某天看到了Hello Sandwich的网站设计后，着实被惊艳了一把，认为这种以素简的博客框架突出文章图片和文字的设计风格和自己的想法十分符合。于是，我试图往这种设计中加入自己对「侘寂」的理解，Prism就诞生了。
 
@@ -24,7 +24,7 @@ Prism的主题设计借鉴自 *[Hello Sandwich](http://www.hellosandwich.jp/)*�
 
 1. Prism支持Maverick 1.1的[Markdown扩展语法](https://github.com/AlanDecode/Maverick#markdown)。
 
-2. Prism对Maverick自带的搜索界面和Valine的评论界面作了定制，使它们与Prism的设计风格保持一致。
+2. Prism对Maverick自带搜索的界面和Valine的评论界面作了定制，使它们与Prism的设计风格保持一致。
 
 &nbsp;
 

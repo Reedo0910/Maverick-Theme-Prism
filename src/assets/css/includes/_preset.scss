@@ -7,6 +7,15 @@ a.no-link {
     }
 }
 
+@mixin a-preset {
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+        color: #666;
+    }
+}
+
 .text-uppercase {
     text-transform: uppercase !important;
 }

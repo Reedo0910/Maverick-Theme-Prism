@@ -3,7 +3,17 @@
 }
 
 #vcomments {
-    line-height: 1.5;
+    * {
+        line-height: 1.5;
+    }
+
+    a {
+        @include a-preset();
+
+        &::before {
+            display: none;
+        }
+    }
 
     .vwrap {
         border: 1px solid #ccc;
@@ -28,6 +38,8 @@
     .vlist .vcard {
         .vimg {
             border-radius: 0;
+            width: 2.75em;
+            height: 2.75em;
         }
 
         .vhead {
@@ -38,17 +50,21 @@
             }
 
             .vnick {
-                color: $text-primary;
-                font-size: 1.1em;
+                font-size: 1em;
                 margin-right: .5em;
+                @include a-preset();
+
+                &::before {
+                    display: none;
+                }
             }
         }
 
         .vquote {
             color: $text-primary;
             margin-top: 1em;
-            padding-left: 1em;
-            border-left: 1px solid $text-light;
+            padding-left: 0;
+            border-left: none;
         }
 
         .vmeta {
@@ -56,6 +72,10 @@
 
             .vtime {
                 color: $text-primary;
+            }
+
+            .vat {
+                @include a-preset();
             }
         }
 

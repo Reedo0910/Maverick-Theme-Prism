@@ -1,5 +1,8 @@
 .prism-section {
     margin-bottom: 4.5em;
+    &.prism-section-archive-list {
+        padding: 0;
+    }
 
     h1.prism-post-title,
     .prism-post-time {
@@ -60,15 +63,21 @@
 
     .prism-post-item {
         margin-bottom: 4.5em;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
     .prism-list {
         padding: 0;
+        margin-left: 0;
         margin-bottom: 5em;
 
         .prism-list-item {
             list-style: none;
             margin-bottom: 1.1em;
+            text-indent: -100px;
+            padding-left: 100px;
 
             .prism-list-item-text {
                 font-weight: 400;
@@ -79,9 +88,10 @@
                 }
 
                 time {
+                    font-family: $pr-font-mono;
                     color: $text-secondary;
-                    margin-right: .8em;
                     font-size: 80%;
+                    margin-right: 10px;
                 }
             }
         }

@@ -1,4 +1,4 @@
-a.no-link {
+@mixin a-preset {
     text-decoration: none;
     color: #000;
 
@@ -7,13 +7,8 @@ a.no-link {
     }
 }
 
-@mixin a-preset {
-    text-decoration: none;
-    color: #000;
-
-    &:hover {
-        color: #666;
-    }
+a.no-link {
+    @include a-preset();
 }
 
 .text-uppercase {

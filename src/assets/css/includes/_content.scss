@@ -1,15 +1,21 @@
 .links {
+    display: flex;
+    flex-flow: row wrap;
+    width: calc(100% + 15px);
+    margin-left: -15px;
     .board-item {
         position: relative;
-        width: 100%;
-        padding-right: 15px;
+        flex: 0 0 50%;
+        max-width: 50%;
         padding-left: 15px;
+        margin-bottom: 15px;
 
         .board-thumb {
             margin-bottom: 10px;
 
             img {
                 margin: 0;
+                width: 100%;
             }
         }
 
@@ -20,14 +26,6 @@
             font-weight: 500;
             font-style: normal;
         }
-    }
-}
-
-
-@media (min-width: 576px) {
-    .links .board-item {
-        flex: 0 0 50%;
-        max-width: 50%;
     }
 }
 

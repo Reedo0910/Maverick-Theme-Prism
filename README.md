@@ -4,9 +4,9 @@
 
 一个 [Maverick](https://github.com/AlanDecode/Maverick)简洁风主题。
 
-&nbsp;
+![Prism Screenshot](https://github.com/Reedo0910/Maverick-Theme-Prism/blob/master/Prism-Screenshot.png?raw=true)
 
-演示站点：[我的博客](https://www.akari-mori.com/)
+演示站点：[灯森](https://www.akari-mori.com/)
 
 &nbsp;
 

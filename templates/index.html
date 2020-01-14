@@ -1,0 +1,60 @@
+{% extends "includes/skeleton_archive.html" %}
+
+{% macro seo_title() %}{{ fp(config.site_name) }}{% endmacro %}
+{% block title %}{{ seo_title() }}{% endblock title %}
+{% block og_title %}{{ seo_title() }}{% endblock %}
+{% block og_description %}{{ fp(config.description) }}{% endblock %}
+{% block og_url %}{{ Router.gen_permalink('index', '', current_page) }}{% endblock %}
+{% block twitter_title %}{{ seo_title() }}{% endblock %}
+
+{% set active_page = Router.gen_permalink('index', '', current_page) %}
+
+{% block more_section %}
+
+<section id="prism__post-list" class="prism-section row">
+    {% for content in content_list %}
+    <article class="yue prism-post-item col-md-8 offset-md-2">
+        <h1 class="prism-post-title"><a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">{{ content.meta['title'] }}</a></h1>
+        <div class="prism-post-time">
+            <a class="no-link" href="{{ Router.gen_permalink_by_content(content) }}" target="_self">
+                <time class="text-uppercase">
+                    {{ content.meta['date'].format("MMMM DD YYYY") }}
+                </time>
+            </a>
+        </div>
+        <div class="prism-content">{{ content.parsed }}</div>
+        {% if config.valine['enable'] and content.get_meta('comment') %}
+        <div class="prism-action-bar">
+            <div class="comment-action action-item"><a class="no-link text-uppercase" href="{{ Router.gen_permalink_by_content(content) + '#prism__comment' }}" target="_self"><i class="fa fa-comment"></i>{{ tr('Comment') }}</a></div>
+        </div>
+        {% endif %}
+    </article>
+    {% endfor %}
+</section>
+
+<div class="container">
+    <section id="prism__page__pagination" class="prism-pagination" class="col-md-8 offset-md-2">
+        <ul>
+            {% if current_page > 1 %}
+            <li class="next">
+                <a class="no-link" href="{{ Router.gen_permalink('index', '', current_page-1) }}" target="_self"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</a>
+            </li>
+            {% else %}
+            <li class="next text-muted">
+                <span title="{{tr('Viewing the first page.')}}"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</span>
+            </li>
+            {% endif %}
+            {% if current_page < max_pages %}
+            <li class="prev">
+                <a class="no-link" href="{{ Router.gen_permalink('index', '', current_page+1) }}" target="_self">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            </li>
+            {% else %}
+            <li class="prev text-muted">
+                <span title="{{tr('Viewing the last page.')}}">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+            </li>
+            {% endif %}
+        </ul>
+    </section>
+</div>
+
+{% endblock more_section %}

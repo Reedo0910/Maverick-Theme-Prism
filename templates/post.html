@@ -1,0 +1,56 @@
+{% extends "includes/skeleton_content.html" %}
+
+{% set active_page = Router.gen_permalink_by_content(content) %}
+
+{% block more_section %}
+<section id="prism__pagination" class="prism-pagination" class="col-md-8 offset-md-2">
+    <ul>
+        {% if not content_next is none %}
+        <li class="next">
+            <a class="no-link" href="{{ Router.gen_permalink_by_content(content_next) }}" target="_self" title="{{ content_next.get_meta('title') }}"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</a>
+        </li>
+        {% else %}
+        <li class="next text-muted">
+            <span title="{{tr('Viewing the newest one.')}}"><i class="fa fa-chevron-left" aria-hidden="true"></i>{{tr('Newer')}}</span>
+        </li>
+        {% endif %}
+        {% if not content_prev is none %}
+        <li class="prev">
+            <a class="no-link" href="{{ Router.gen_permalink_by_content(content_prev) }}" target="_self" title="{{ content_prev.get_meta('title') }}">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </li>
+        {% else %}
+        <li class="prev text-muted">
+            <span title="{{tr('Viewing the oldest one.')}}">{{tr('Older')}}<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </li>
+        {% endif %}
+    </ul>
+</section>
+{% endblock more_section %}
+
+{% block more_content -%}
+<div class="prism-post-meta col-md-8 offset-md-2">
+    <span>{{ content.get_meta('author') }}</span>
+    {% if len(content.get_meta('categories')) > 0 %}
+    <span>/</span>
+    <span>
+        <a class="category no-link" href="{{ Router.gen_permalink('category', content.get_meta('categories')[-1], 1) }}" target="_self">
+        {{ content.get_meta('categories')[-1] }}
+        </a>
+    </span>
+    {% endif %}
+    {% if len(content.get_meta('tags')) > 0 %}
+    <span>/</span>
+    {% for tag in content.get_meta('tags') %}
+    <span class="prism-tag">
+        <a class="no-link" href="{{ Router.gen_permalink('tag', tag, 1) }}" target="_self">#{{- tag -}}</a>
+    </span>
+    {% endfor %}
+    {% endif %}
+    {% if config.valine['enable'] and config.valine.get('visitor', False) and content.get_meta('comment') %}
+    <span>/</span>
+    <span class="leancloud_visitors" id="{{ get_path(Router.gen_permalink_by_content(content)) }}" data-flag-title="{{ content.meta['title'] }}"><span class="leancloud-visitors-count"></span> Views</span>
+    {% endif %}
+</div>
+
+
+{%- endblock more_content %}

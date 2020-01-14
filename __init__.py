@@ -70,18 +70,21 @@ class Prism(Template):
 
         src = image['src']
 
+        classname = ''
         style = ''
         attr = ''
         if image['width'] != -1 and image['height'] != -1:
             style = 'style="flex: %s"' % str(image['width'] * 50 / image['height'])
+            if image['width'] < image['height']:
+                classname = 'class="vertical-figure"'
         else:
             attr = 'size-undefined'
 
         if figcaption != "":
             figcaption = '<figcaption>%s</figcaption>' % figcaption
 
-        return '<figure %s %s><img width="%s" height="%s" src="%s" alt="%s"/>%s</figure>' \
-            % (style, attr, image['width'], image['height'], src, image['alt'], figcaption)
+        return '<figure %s %s %s><img width="%s" height="%s" src="%s" alt="%s"/>%s</figure>' \
+            % (classname, style, attr, image['width'], image['height'], src, image['alt'], figcaption)
 
     def gather_meta(self):
         self._tags = set()

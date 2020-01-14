@@ -40,12 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             parent.className += ' vertical-figure';
                         }
                     };
-                } else {
-                    var width = parseFloat(figure.dataset.width);
-                    var height = parseFloat(figure.dataset.height);
-                    if (height > width) {
-                        figure.className += ' vertical-figure';
-                    }
                 }
             })();
         }

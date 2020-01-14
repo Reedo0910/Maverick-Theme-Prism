@@ -3,8 +3,8 @@ Global elements
 */
 
 .prism-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #prism__header {
@@ -73,6 +73,8 @@ Global elements
 
 #prism__footer {
 
+    margin-bottom: 20px;
+
     .social-links {
         margin-top: 30px;
 
@@ -109,6 +111,7 @@ Global elements
         text-align: center;
         margin: 5px 0 10px;
         font-size: .8em;
+        line-height: 1.65;
 
         .copyright-text {
             display: inline;

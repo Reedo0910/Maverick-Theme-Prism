@@ -6,7 +6,7 @@
 
 ![Prism Screenshot](https://github.com/Reedo0910/Maverick-Theme-Prism/blob/master/Prism-Screenshot.png?raw=true)
 
-演示站点：[灯森](https://www.akari-mori.com/)
+演示站点：[灯森](https://reedo0910.github.io/Prism-Blog/)
 
 &nbsp;
 
